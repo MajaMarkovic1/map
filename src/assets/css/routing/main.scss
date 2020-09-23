@@ -1,0 +1,42 @@
+@import "../base";
+
+@media (max-width: 600px) {
+    #directions-frame {
+        max-width: 350px;
+        margin: auto;
+      
+    }
+}
+@media (min-width: 601px) {
+    #directions-frame {
+        width: 350px;
+    }
+}
+#directions-frame {
+    @include frame;
+    position: relative;
+
+    .route-options {
+        @include font;
+        font-size: 14px;
+        max-width: 348px;
+        height: 169px;
+        background: $light_background-color;
+        padding: 10px 15px;
+        box-shadow: $shadowFrame;
+        z-index: 3;
+        .option {
+            display: flex;
+            font-weight: 500;
+            input {
+                margin: 4px 4px 0 0;
+                &.checked {
+                    filter: invert(5)
+                }
+            }
+        }
+        .option-label {
+            text-align: left; 
+        }
+    }
+}

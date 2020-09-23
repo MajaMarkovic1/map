@@ -1,0 +1,88 @@
+@import "base";
+@import "dropdown";
+
+#search-frame {
+    @include frame;
+    @include scroller;
+    position: relative;
+    margin-top: 15px;
+    overflow: scroll;
+    max-height: 500px;
+    .search.category.parent {
+        display: flex;
+        border-bottom: $frame_border;
+        .search.parent.logo {
+            width: 22px;
+            height: 22px;
+            margin: 15px 20px;
+        }
+        .search.parent.name {
+            @include font;
+            margin: 15px 0;
+        } 
+    }
+    .search.category.wrapper {
+        @include button;
+        display: flex;
+        border-bottom: $frame_border;
+        width: 100%;
+        border-bottom: $frame_border;
+        .search.category.logo {
+            width: 22px;
+            height: 22px;
+            margin: 15px;
+            margin-left: 20px;
+        }
+        > div {
+            text-align: left;
+            .search.category.name{
+                @include font;
+                font-size: 14px;
+                line-height: 17px;
+                color: $dark_icon_color;
+                margin-top: 5px;
+            }
+            .search.category.address {
+                @include font;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                color: $dark_icon_color;
+            }
+        }
+        &.active {
+            background-color: $light_background_color;
+        }
+    }
+    .load.btn {
+        @include font;
+        @include button;
+        font-size: 12px;
+        height: 30px;
+    }
+    .no-results.txt {
+        @include font;
+        font-weight: normal;
+        margin-top: 15px;
+        font-style: italic;
+    }
+    .search.street.name {
+        @include font;
+        @include button;
+        @include dropdown;
+        font-size: 14px;
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        height: 40px;
+        padding: 10px 8px 8px 25px;
+        &.active {
+            background-color: $light_background_color;
+            .dropdown {
+                display: block;
+            }
+        }
+
+       
+    }
+}

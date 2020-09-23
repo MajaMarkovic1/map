@@ -1,0 +1,32 @@
+@import "base";
+
+ul.v-context {
+    @include frame;
+    width: 260px;
+    padding: 10px;
+    li {
+        @include font;
+        font-size: 14px;
+        display: flex;
+        height: 38px;
+        border-bottom: $frame_border;
+        a {
+            padding: 0;
+        }
+        img {
+            max-height: 20px;
+            max-width: 17px;
+            margin: 0 10px;
+        }
+        &:hover, &:active, a:hover {
+            background: $light_background-color;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+}
+

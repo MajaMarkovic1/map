@@ -1,0 +1,217 @@
+@import 'base';
+
+@mixin poi {
+        @include frame;
+        position: relative;
+        margin-top: 5px;
+        #poi-header {
+            @include header;
+            display: block;
+            border-bottom: $frame_border;
+            height: 50px;
+            button {
+                @include font;
+                @include button;
+                width: 310px;
+                text-align: left;
+                color: $dark_icon_color;
+                position: absolute;
+                top: 10px;
+                left: 30px;
+                #arrow {
+                    margin: 0 10px 0 -16px;
+                }
+            }
+        }
+        .cover-wrapper {
+            .cover {
+                position: relative;
+                .cover-img {
+                    width: 100%;
+                    border-bottom: $frame_border;
+                }
+                .cover-logo {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: contain;
+                    position: absolute;
+                    right: 28px;
+                    bottom: 12px;
+                }
+            }
+            .poi-infos {
+                padding: 10px 20px 0 20px;
+                .poi-intro {
+                    .poi-name {
+                        @include font;
+                        font-size: 22px;
+                        line-height: 30px;
+                        text-align: left;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .poi-address {
+                        @include font;
+                        margin: 5px 0;
+                        font-size: 14px;
+                        font-weight: normal;
+                        line-height: 17px;
+                        color: #464646;
+                        text-align: left;
+                    }
+                    .poi-parent {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 10px 0;
+                        .category-name {
+                            @include font;
+                            font-size: 14px;
+                            font-weight: 600;
+                            display: flex;
+                            div {
+                                text-align: left;
+                            }
+                            img {
+                                object-fit: contain;
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 10px;
+                            }
+                        }
+                        .is-open-info {
+                            @include font;
+                            font-size: 12px;
+                            width: 100px;
+                            height: 30px;
+                            background: $poi_closed_color;
+                            border-radius: 5px;
+                            color: white;
+                            display: flex;
+                            &.open {
+                                background: $poi_open_color;
+                            }
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                filter: brightness(5);
+                                margin: 0 5px 0 5px;
+                            }
+                        }
+                    }
+                    .poi-tel {
+                        @include font;
+                        font-size: 18px;
+                        text-align: left;
+                        margin: 10px 0;
+                    }
+                    .poi-links {
+                        margin: 10px 0 20px;
+                        .poi-link {
+                            @include font;
+                            font-size: 14px;
+                            text-align: left;
+                        }
+                    }
+                    a {
+                        color: inherit;
+                        text-decoration: underline;
+                        text-decoration-color: rgba(0,0,0,0.1);
+                        &:hover{
+                            text-decoration-color: rgba(0,0,0,1);
+                        }
+                    }
+                }
+            }
+
+            .close-button{
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                z-index: 3;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        .more-infos-wrapper {
+            @include scroller;
+            background: white;
+            box-shadow: $shadowFrame;
+            padding: 10px 20px 0 20px;
+            .poi-icons {
+                border-top: $frame_border;
+                display: flex;
+                justify-content: space-between;
+                button {
+                    @include button;
+                    img {
+                        margin: 10px;
+                    }
+                }
+            }
+            .addit-info {
+                border-top: $frame_border;
+                @include font;
+                font-size: 14px;
+                font-weight: normal;
+                color: #464646;
+                cursor: pointer;
+            }
+            .more-info {
+                border-top: $frame_border;
+                display: none;
+                padding-top: 20px;
+                &.active {
+                    display: block;
+                }
+                .time-info, .addit-info {
+                    @include font;
+                    text-align: left;
+                    margin-bottom: 10px;
+                }
+                .opening-schedule {
+                    margin-bottom: 20px;
+                    .working-days {
+                        @include font;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 17px;
+                        td {
+                            padding-left: .5em;
+                            padding-right: .5em;
+                            &:first-child{
+                                text-align: left;
+                            }
+                            &:last-child{
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+                .additional-info {
+                    @include font;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: left;
+                    overflow: hidden;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+        &.active {
+            max-height: 870px;
+            .poi-infos {
+                .more-info {
+                    display: block;
+                }
+                .more-info-btn {
+                    display: none;
+                }
+                .less-info-btn {
+                    display: block;
+                }
+            }
+        }
+}

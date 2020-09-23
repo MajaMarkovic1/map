@@ -1,0 +1,146 @@
+@import "base";
+
+@media (min-width: 601px){
+    #control-popup.settings {
+        @include font;
+        width: 260px;
+        height: 250px;
+        text-align: left;
+    }
+}
+ 
+#control-popup.settings {
+    @include font;
+    text-align: left;
+    .control-content {
+        height: auto;
+        margin: 15px 20px;
+        .locale-changer {
+            .layers, .impressum {
+                display: none;
+            }
+           
+        }
+        .language {
+            .title {
+                line-height: 20px;
+                margin-bottom: 7px;
+            }
+            .lng.select {
+                width: 100%;
+                height: 30px;
+                @include font;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 14px;
+                border: $frame_border;
+                outline: none;
+                border-radius: 5px;
+            }
+        }
+        .functions {
+            .title {
+                line-height: 20px;
+                margin: 20px 0 7px;
+            }
+           
+            .functions.icons {
+                display: flex;
+                .function.btn {
+                    width: 30px;
+                    height: 30px;
+                    border: $frame_border;
+                    margin-right: 10px;
+                }
+                .title {
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    margin: 3px 15px 0 0;
+                }
+            }
+        }
+        .title-layer {
+            display: none;
+        }
+        
+    }
+}
+.download-wrapper {
+    display: none;
+}
+@media (max-width: 600px) {
+    #control-popup.settings {
+        @include frame;
+        position: relative;
+        max-width: 350px;
+        height: fit-content;
+        margin: 0 auto;
+        margin-top: 5px;
+        .control-content {
+            .locale-changer {
+                .impressum {
+                    font-size: 10px;
+                    display: flex;
+                    justify-content: center;
+                    div, a {
+                        margin: 15px 5px 0;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: $dark_icon_color;
+                        cursor: pointer;
+                    }
+                }
+                .title, .title-layer {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    display: block;
+                }
+                .layers {
+                    @include scroller;
+                    display: block;
+                    height: 130px;
+                    max-width: 100%;
+                    border: $frame_border;
+                    border-radius: 5px;
+                    margin-bottom: 10px;
+                    .layers-wrapper {
+                        height: 100%;
+                        width: 200px;
+                        position: relative;
+                        margin: 0 auto;
+                        button {
+                            width: fit-content;
+                            border: none;
+                            .button-inner {
+                              > div {
+                                left: 0;
+                              }
+                            }
+                        }
+                    }
+                }
+               
+            }
+        }
+       
+    }
+    .download-wrapper {
+        display: flex;
+        justify-content: space-between;
+        background: $light_background-color;
+        height: 52px;
+        border-top: $frame_border;
+        line-height: 52px;
+        .download-text {
+            font-size: 14px;
+            font-weight: normal;
+            width: 60%;
+        }
+        .downl-img {
+            @include button;
+            padding: 5px 10px;
+        }
+    }
+}

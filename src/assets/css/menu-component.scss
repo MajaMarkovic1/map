@@ -1,0 +1,66 @@
+@import "base";
+
+#menu-frame {
+    @include frame;
+
+    .close-button {
+        @include button;
+        height: 100%;
+        display: none;
+        margin-right: 10px;
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.search-box {
+    display: flex;
+    height: 50px;
+    position: relative;
+    .btn {
+        @include button;
+        width: 50px;
+        &.active, &:hover {
+            background: $light_background-color;
+        }
+        &.active + .line-icon, &:hover + .line-icon {
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+    }
+    .lhs {
+        left: 0;
+    }
+    .rhs {
+        right: 0;
+    }
+    form {
+        flex-grow: 1;
+    }
+    input {
+        flex-grow: 1;
+        @include font;
+        margin: 0 5px;
+        height: 100%;
+        display: block;
+        color: #A9A9A9;
+        border: none;
+        outline: none;
+    }
+
+    .line-icon {
+        margin: 10px 0;
+        width: 1px;
+    }
+    .line-icon.right {
+        position: relative;
+        right: 50px;
+    }
+}
+
+
+#print-frame {
+    position: absolute;
+    z-index: 2;
+}

@@ -1,0 +1,170 @@
+@import "base";
+
+@media (min-width: 601px){
+    #lhs_wrapper {
+        position: absolute;
+        width: 350px;
+        top: $basicDistance;
+        left: $basicDistance;
+        max-height: calc(100% - (2 * #{$basicDistance}));
+    }
+    #store-links {
+        @include frame;
+        position: absolute;
+        z-index: 2;
+        top: 30px;
+        right: 30px;
+        max-width: 220px;
+        height: 50px;
+        display: flex;
+        padding: 0 10px;
+        .logo-img {
+            max-width: fit-content;
+            max-height: 100%;
+            margin: 0 5px;
+
+        }
+        .downl-img {
+            @include button;
+            margin: 0 5px;
+        }
+    }
+    #company-links {
+        @include font;
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+         .company-website, .impressum-link, .legend-link {
+            position: relative;
+            font-size: 10px;
+            text-decoration: none;
+            color: #464646;
+            top: 10px;
+            left: 10px;
+            &::after {
+                margin: 10px;
+                font-size: small;
+                content: "|";
+                color: grey;
+    
+            }
+            &:last-child::after {
+                content: "";
+            }
+            
+        }
+    }
+}
+
+@media (max-width: 600px){
+    #lhs_wrapper {
+        max-width: 350px;
+        max-height: calc(100% - (2 * #{$basicDistance}));
+        margin: 0 auto;
+        margin-top: $basicDistance;
+        #directions-frame{
+            position: relative;
+            top: 10px;
+        }
+    }
+    #store-links {
+        display: none;
+    }
+    .ol-scale-line  {
+        width: fit-content;
+        margin: auto;
+        left: 0; 
+        right: 0;
+    }
+    #company-links { 
+        display: none;
+    }
+
+}
+@media (min-width: 851px) {
+    .ol-scale-line  {
+        width: fit-content;
+        margin: auto;
+        left: 0; 
+        right: 0;
+    }
+}
+@media (min-width: 601px) and (max-width: 850px){
+    .ol-scale-line {
+       margin-left: 85vw;
+    }
+}
+#map {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    .ol-viewport {
+        .ol-overlaycontainer-stopevent {
+            .ol-zoom {
+                position: absolute;
+                right: $basicDistance;
+                bottom: $basicDistance;
+                top: auto;
+                left: auto;
+                background: transparent;
+                margin: 0;
+                padding: 0;
+                button {
+                    @include button;
+                    width: $basicDistance;
+                    height: $basicDistance;
+                    margin-top: 10px;
+                    color: $dark_icon_color;
+                    font-weight: 100;
+                    border: $button_border;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    box-shadow: $shadowFrame;
+                    background: $light_icon_color no-repeat center;
+                    &.active, &:active {
+                        background: $dark_icon_color no-repeat center;
+                        color: $light_icon_color;
+                    }
+                }
+
+                .layers-icon {
+                    background-image: url("./assets/icons/layers-dark.png");
+                    &.active {
+                        background-image: url("./assets/icons/layers-light.png");
+                    }
+                }
+                .settings-icon {
+                    background-image: url("./assets/icons/settings-dark.png");
+                    &.active {
+                        background-image: url("./assets/icons/settings-light.png");
+                    }
+                }
+                .fullscreen-control {
+                    background-image: url("./assets/icons/frame-dark.png");
+                    &:active {
+                        background-image: url("./assets/icons/frame-light.png");
+                    }
+                }
+            }
+            .ol-scale-line  {
+                background-color: $light_background-color;
+                width: fit-content;
+                .ol-scale-line-inner {
+                    border: $frame_border;
+                    border-top: none;
+                    color: $dark_icon_color;
+                }
+            }
+        }
+    }
+}
+
+sup{
+    line-height: 0;
+    vertical-align: super;
+    font-size: 60%;
+}
+
+

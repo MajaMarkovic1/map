@@ -1,0 +1,23 @@
+image: node:14-slim
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+
+test:
+  stage: test
+  script:
+    - npm config set production false
+    - npm install
+    - npx eslint src/**/*.js src/**/*.vue
+    - npm run test:unit

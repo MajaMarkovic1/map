@@ -1,0 +1,86 @@
+@import "../base";
+
+#direction-options {
+    //@include frame;
+    max-width: 349px;
+    height: 400px;
+    border-top: $button_border;
+    .direction-options.icons {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: $frame_border;
+        button {
+            @include button;
+            width: 70px;
+            height: 50px;
+            img {
+                filter: brightness(2);
+            }
+            &.active {
+                border-bottom: 3px solid #A9A9A9;
+                img {
+                    filter: brightness(1);
+                }
+            }
+        }
+    }
+}
+#direction-summary {
+    margin: 10px;
+    .direction-type.wrapper {
+        @include font;
+        @include button;
+        display: flex;
+        align-items: flex-start;
+        padding: 5px;
+        width: 100%;
+        background: none;
+        border: none;
+        border-bottom: $frame_border;
+        .direction-icon {
+            width: 40px;
+        }
+        .direction-option-description {
+            flex-grow: 2;
+            font-size: 16px;
+            text-align: left;
+
+            .first-row {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .summary {
+                font-size: 14px;
+                font-weight: normal;
+                &.best {
+                    color: green;
+                }
+            }
+            .direction-suboptions {
+                display: flex;
+                font-weight: normal;
+                div {
+                    white-space: nowrap;
+                    img {
+                        vertical-align: middle;
+                        height: 15px;
+                    }
+                    label {
+                        font-size: 14px;
+                        margin: 0 2px 0 2px;
+                    }
+                }
+                div:not(:last-child):after {
+                    margin-left: 7px;
+                    margin-right: 7px;
+                    color: grey;
+                    content: ">";
+                }
+            }
+        }
+
+        
+    }
+}
+

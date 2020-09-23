@@ -1,0 +1,116 @@
+@import "base";
+
+#menu-popup {
+    @include frame;
+    position: relative;
+    margin-top: 5px;
+    #main-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        max-height: 800px;
+        #menu-header {
+            @include header;
+            height: 50px;
+            z-index: 3;
+            button {
+                @include font;
+                @include button;
+                width: 50%;
+                height: 49px;
+                color: #A9A9A9;
+                line-height: 20px;
+                &.active {
+                    border-bottom: 4px solid #A9A9A9;
+                    color: $dark_icon_color;
+                }
+            }
+        }
+        #category-header, #poi-header {
+            @include header;
+            border-bottom: $frame_border;
+            z-index: 3;
+            min-height: 50px;
+
+            button {
+                @include font;
+                @include button;
+                text-align: left;
+                color: $dark_icon_color;
+                padding-left: 10px;
+            }
+
+            .pin {
+                padding: 10px;
+            }
+        }
+        #category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #poi-header button {
+            font-size: 15px;
+        }
+    }
+
+    .category-content {
+        @include scroller;
+    }
+
+    #chosen-category {
+        @include header;
+        max-height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        .chosen-single-cat {
+            align-items: flex-start;
+            width: fit-content;
+            margin: 2px;
+            .chosen-inner-cat {
+                display: flex;
+                max-width: 150px;
+                height: 30px;
+                border: $frame_border;
+                border-radius: 10px;
+                .chosen-category-name {
+                    @include font;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: left;
+                    text-overflow: ellipsis;
+                    margin: 5px 5px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .close-button {
+                    border: none;
+                    background: $light_icon_color;
+                    margin: 4px 0;
+                    outline: none;
+                    cursor: pointer;
+                }
+            } 
+        }
+        .add-category-button {
+            height: 30px;
+            width: 30px;
+            background: #FFFFFF;
+            border: 1px solid #A9A9A9;
+            box-sizing: border-box;
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+            display: block;
+            margin-top: 2px;
+            div {
+                margin-top: 2px;
+                font-size: 22px;
+                width: 100%;
+                height: 100%;
+                line-height: 22px;
+            }
+        }
+    }
+}

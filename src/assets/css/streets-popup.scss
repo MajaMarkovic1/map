@@ -1,0 +1,30 @@
+@import "base";
+@import "dropdown";
+
+#street-directory {
+    @include scroller;
+    height: 540px;
+    margin-bottom: 5px;
+}
+.street.item {
+    @include font;
+    @include button;
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: $frame_border;
+    padding: 10px 8px 8px 18px;
+    .dropdown {
+        @include dropdown;
+        width: 60px;
+        height: 100%;
+    }
+}
+.street.item.active {
+    background-color: $light_background_color;
+    .dropdown {
+        display: block;
+    }
+}

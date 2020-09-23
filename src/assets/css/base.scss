@@ -1,0 +1,59 @@
+$basicDistance: 30px;
+$light_icon_color: #FFFFFF;
+$dark_icon_color: #464646;
+$light_background-color: #EEEEEE;
+$shadowFrame: 2px 4px 4px #999999;
+$frame_border: 1px solid #A9A9A9;
+$button_border: 1px solid $dark_icon_color;
+$filter: brightness(90%);
+$transform: scale(1.02, 1.02);
+$poi_open_color: #219653;
+$poi_closed_color: #EB5757;
+
+@mixin frame {
+  z-index: 2;
+  background: $light_icon_color;
+  box-sizing: border-box;
+  border: $frame_border;
+  border-radius: 2px;
+  box-shadow: $shadowFrame;
+}
+
+@mixin font {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: 700;
+  align-items: center;
+  font-size: 18px;
+  line-height: 22px;
+}
+@mixin header {
+  width: 100%;
+  max-height: 50px;
+  background: $light_icon_color;
+  border-bottom: $frame_border;
+}
+@mixin scroller {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #A9A9A9;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #A9A9A9; 
+    border: 3.5px solid $light_icon_color; 
+    border-radius: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $light_icon_color;
+  }
+}
+@mixin button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}

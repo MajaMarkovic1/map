@@ -1,0 +1,139 @@
+@import '../base';
+
+#direction-steps {
+    @include font;
+    border: $frame_border;
+    box-shadow: $shadowFrame;
+    height: 530px;
+    background: $light_icon_color;
+    display: flex;
+    flex-direction: column;
+
+    > button {
+        @include font;
+        @include button;
+        height: max-content;
+        border-bottom: $frame_border;
+        font-weight: normal;
+        font-size: 14px;
+        display: flex;
+        padding: 0 10px;
+
+        div {
+            margin: 5px;
+            text-align: left;
+        }
+
+        img {
+            margin: 0 10px;
+        }
+    }
+
+    .direction-option {
+        padding: 10px 25px;
+        background: $light_background-color;
+        border-bottom: $frame_border;
+        width: 100%;
+
+        .option-description {
+            @include font;
+            display: flex;
+            justify-content: space-between;
+
+            .direction-icon {
+                height: 100%;
+            }
+
+            .direction-option-description {
+                height: 100%;
+                width: 62%;
+                font-size: 16px;
+                text-align: left;
+
+                .direction.details {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                .direction-suboptions {
+                    display: flex;
+                    font-weight: normal;
+
+                    div {
+                        img {
+                            width: 13px;
+                            height: 13px;
+                        }
+
+                        label {
+                            font-size: 14px;
+                            margin: 0 10px 0 4px;
+                        }
+                    }
+                }
+            }
+
+            .direction.distance {
+                height: 100%;
+                width: 60px;
+                font-size: 16px;
+            }
+        }
+
+        .direction-links {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 40px;
+
+            > button {
+                @include button;
+            }
+
+        }
+    }
+
+    .steps-wrapper {
+        @include scroller;
+        flex-grow: 1;
+        height: 100%;
+
+        .step {
+            border-bottom: $frame_border;
+            padding: 10px 20px 10px 25px;
+
+            .time-and-distance {
+                display: flex;
+                justify-content: space-between;
+                font-size: 14px;
+            }
+            .step-description {
+                font-weight: normal;
+                font-size: 14px;
+                text-align: left;
+                padding-bottom: 5px;
+            }
+
+            .summary {
+                display: flex;
+                justify-content: space-between;
+
+                .step-data {
+                    width: 90%;
+
+                }
+            }
+
+            .detail {
+                border-bottom: 1px solid #c4c4c4;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}
